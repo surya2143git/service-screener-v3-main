@@ -1,0 +1,54 @@
+{
+    "ecsClusterPublicEndpoint": {
+        "category": "S",
+        "^description": "ECS public endpoint: {$COUNT} of your clusters have public endpoints enabled. Disable for security.",
+        "shortDesc": "ECS cluster public endpoint enabled",
+        "criticality": "H",
+        "downtime": 1,
+        "slowness": 0,
+        "additionalCost": 0,
+        "needFullTest": 1,
+        "ref": [
+            "[ECS Network Access]<https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security-network.html>"
+        ]
+    },
+    "ecsSecretsEncryption": {
+        "category": "S",
+        "^description": "ECS secrets encryption: {$COUNT} of your clusters have secrets encryption disabled.",
+        "shortDesc": "ECS secrets encryption disabled",
+        "criticality": "H",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 1,
+        "needFullTest": 1,
+        "ref": [
+            "[ECS Secrets Management]<https://docs.aws.amazon.com/AmazonECS/latest/developerguide/secrets.html>"
+        ]
+    },
+    "ecsClusterSGRestriction": {
+        "category": "S",
+        "^description": "ECS cluster security group: {$COUNT} clusters allow more permissions than minimal rules.",
+        "shortDesc": "ECS cluster SG minimum rules",
+        "criticality": "H",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 0,
+        "needFullTest": 1,
+        "ref": [
+            "[ECS Security Group Requirements]<https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security-network.html>"
+        ]
+    },
+    "ecsClusterRoleLeastPrivilege": {
+        "category": "S",
+        "^description": "ECS role: {$COUNT} clusters' roles have full access to one or more services.",
+        "shortDesc": "ECS roles full access",
+        "criticality": "H",
+        "downtime": 0,
+        "slowness": 0,
+        "additionalCost": 0,
+        "needFullTest": 1,
+        "ref": [
+            "[IAM Grant Least Privilege]<https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#grant-least-privilege>"
+        ]
+    }
+}
